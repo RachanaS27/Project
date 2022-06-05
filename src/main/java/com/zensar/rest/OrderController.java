@@ -48,7 +48,6 @@ public class OrderController {
 			String url = "http://localhost:5001/viewCustomerById/" + customerId;
 
 			customer = restTemplate.getForObject(url, Customer.class);
-			System.out.println(customer);
 			if (customer != null) {
 			order.setCustomer(customer);
 			}
@@ -93,7 +92,6 @@ public class OrderController {
 		} catch (NullPointerException e) {
 		e.printStackTrace();
 		}
-		System.out.println(order);
 		
 		 this.service.addOrder(order);
 		 return order;
@@ -218,9 +216,7 @@ public class OrderController {
 				order2.setCustomer(customer);
 				
 				newOrder.add(order2);
-				System.out.println("order---"+order2);
-				System.out.println("new order"+newOrder);
-
+			
 			}
 		}
 		
